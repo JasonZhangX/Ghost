@@ -1,0 +1,26 @@
+{
+  "name": "ghost-zhihu",
+  "version": "1.0.0",
+  "description": "Traffic flow system.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonZhangX/Ghost.git"
+  },
+  "keywords": [
+    "Zhihu"
+  ],
+  "author": "Jason Zhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JasonZhangX/Ghost/issues"
+  },
+  "homepage": "https://github.com/JasonZhangX/Ghost#readme",
+  "dependencies": {
+    "cheerio": "^0.22.0",
+    "superagent": "^3.3.1"
+  }
+}
