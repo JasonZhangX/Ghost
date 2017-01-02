@@ -107,12 +107,11 @@ oApp.post('/answer', function(req, oPostRes) {
     oSuperagent.get(oConfig.zhihuAPI.answer.url).set({
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
         'Referer': 'https://www.zhihu.com/people/heng-yuan-zhang',
-        'authorization': '',
+        'Cookie': oCookie
     }).end(function(oErr, oRes) {
         if (!oErr) {
             console.log(oRes);
-            var answers = {};
-            oPostRes.send(answers);
+            oPostRes.send(oRes.body);
             oPostRes.end();
         } else {
             console.dir(oErr);
@@ -120,7 +119,7 @@ oApp.post('/answer', function(req, oPostRes) {
         }
     });
 });
-
+//logout
 oApp.post('/logout', function(req, oPostRes) {
     oSuperagent.get(oConfig.zhihuAPI.logout.url).set({
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
@@ -139,6 +138,27 @@ oApp.post('/logout', function(req, oPostRes) {
     });
 });
 
+//vote
+oApp.post('/vote', function(req, oPostRes) {
+    var nAid = req.body.nAid;
+    oSuperagent.post(oConfig.zhihuAPI.vote.url.replace('{aid}', nAid)).set({
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+        'Content-Type': 'application/json',
+        'Referer': 'https://www.zhihu.com/',
+        'Cookie': oCookie
+    }).send({ type: 'up' }).redirects(0).end(function(oErr, oRes) {
+        if (!oErr) {
+            //Get cookie
+            //z_c0
+            var oCount = oRes.body;
+            oPostRes.send(oCount);
+            oPostRes.end();
+        } else {
+            console.dir(oErr);
+            oPostRes.end();
+        }
+    });
+});
 var oServer = oApp.listen('3000', function() {
     var host = oServer.address().address;
     var port = oServer.address().port;

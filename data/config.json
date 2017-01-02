@@ -25,6 +25,9 @@
         },
         "logout": {
             "url": "https://www.zhihu.com/logout"
+        },
+        "vote": {
+            "url": "https://www.zhihu.com/api/v4/answers/{aid}/voters"
         }
     },
     "browser": {

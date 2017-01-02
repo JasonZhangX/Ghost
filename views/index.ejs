@@ -865,18 +865,7 @@
 									<tbody>
 
 
-										<tr>
-
-											<td><a href="#" >URL</a></td>
-
-
-
-											<td>
-
-												<a href="#" class="btn mini red"><i class="icon-edit"></i>Vote it</a>
-											</td>
-
-										</tr>
+										
 
 									
 
@@ -1091,6 +1080,19 @@
 			   }
 			   var getAnswer = function(oMsg){
 				   console.dir(oMsg);
+				   var sTableStr = '';
+				   $.each(oMsg.data, function(index, element){
+					   sTableStr += '<tr><td><a href="https://www.zhihu.com/question/' + this.question.id + '/answer/' + this.id + '" >' + this.question.title + '</a></td><td><a href="#" data-id="' + this.id + '" class="btn mini red vote-btn"><i class="icon-edit"></i>Vote it</a></td></tr>';
+
+				   });
+				   var $answerTable = $('#ghostAnswerList').find('tbody');
+				   $answerTable.empty().append(sTableStr);
+				   $answerTable.on('click', '.vote-btn', function(){
+					   console.log($(this).attr('data-id'));
+					   var nAid = $(this).attr('data-id');
+					   fSendRequest('/vote', {nAid: nAid}, logoutStatus);
+					   return false;
+				   });
 			   }
 			   var sendFormData = function(){
 				   var $loginModal = $('#loginModal #ghostLoginForm');
