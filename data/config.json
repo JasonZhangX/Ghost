@@ -1,15 +1,34 @@
 {
     "userList": [{
-        "email": "jasonghost01@cntv.cn",
-        "password": "*qwer1234"
-    }],
+            "email": "jasonghost01@cntv.cn",
+            "password": "*qwer1234"
+        },
+        {
+            "email": "mycukaloddo-3272@yopmail.com",
+            "password": "*qwer1234"
+        },
+        {
+            "email": "heaven54321@163.com",
+            "password": "*qwer1234"
+        },
+        {
+            "email": "errazacinn-3695@yopmail.com",
+            "password": "*qwer1234"
+        }
+    ],
     "zhihuAPI": {
         "login": {
             "url": "https://www.zhihu.com/login/email"
+        },
+        "answer": {
+            "url": "https://www.zhihu.com/api/v4/members/heng-yuan-zhang/answers"
+        },
+        "logout": {
+            "url": "https://www.zhihu.com/logout"
         }
     },
     "browser": {
-        "userAgent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.116 Safari/537.36",
+        "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36",
         "contentType": "application/x-www-form-urlencoded; charset=UTF-8"
     }
 }
