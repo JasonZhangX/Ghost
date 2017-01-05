@@ -17,7 +17,7 @@ Traffic flow system.
 	  -URL: https://www.zhihu.com/api/v4/members/{user-name}/followers
 
 - Vote
-	- URL: https://www.zhihu.com/api/v4/answers/{<problem-></problem->id}/voters
+	- URL: https://www.zhihu.com/api/v4/answers/{problem-id}/voters
 	- Param:
 		- {type: "up"}
 
