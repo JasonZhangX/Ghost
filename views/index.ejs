@@ -43,6 +43,12 @@
 	<!-- BEGIN PAGE LEVEL STYLES -->
 
 	<link rel="stylesheet" href="css/DT_bootstrap.css" />
+	<style rel="stylesheet">
+		.navbar-inner .nav .user a img{
+			height: 29px;
+			width: 29px;
+		}
+	</style>
 
 	<!-- END PAGE LEVEL STYLES -->
 
@@ -230,7 +236,7 @@
 
 								<a href="inbox.html?a=view">
 
-								<span class="photo"><img src="images/avatar2.jpg" alt="" /></span>
+								<span class="photo"><img src="https://pic1.zhimg.com/433180620_m.jpg" alt="" /></span>
 
 								<span class="subject">
 
@@ -486,9 +492,9 @@
 
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
 
-						<img alt="" src="images/avatar1_small.jpg" />
+						<img alt="" src="https://pic1.zhimg.com/433180620_m.jpg" />
 
-						<span class="username">Bob Nilson</span>
+						<span class="username">张恒远</span>
 
 						<i class="icon-angle-down"></i>
 
@@ -580,7 +586,7 @@
 
 					<i class="icon-home"></i> 
 
-					<span class="title">Dashboard</span>
+					<span class="title">Ghost user list</span>
 
 					</a>
 
@@ -797,6 +803,10 @@
 
 											<th><i class="icon-key"></i> Password</th>
 
+											<th><i class="icon-info-sign"></i> User Name</th>
+
+											<th><i class="icon-info-sign"></i> User ID</th>
+
 											<th><i class="icon-info-sign"></i> Status</th>
 
 											<th><i class="icon-wrench"></i>Action</th>
@@ -814,12 +824,17 @@
 
 											<td class="ghost-password"><%=user.password%></td>
 
+											<td><a href="<%=user.url%>"><%=user.name%></a></td>
+
+											<td class="ghost-uid"><%=user.uid%></td>
+
 											<td></td>
 
 											<td>
 												<a href="#" class="btn mini blue ghost-login" data-toggle="modal" data-target="#loginModal"><i class="icon-edit"></i> Login</a>
 												<a href="#" class="btn mini red ghost-logout"><i class="icon-edit"></i> Log out</a>
 												<a href="#" class="btn mini green ghost-answer" data-toggle="modal" data-target="#ghostAnswerModal"><i class="icon-edit"></i> View Answers</a>
+												<a href="#" class="btn mini blue ghost-follow" data-uid="<%=user.uid%>"><i class="icon-edit"></i> Follow</a>
 											</td>
 
 										</tr>
@@ -900,7 +915,7 @@
 												<div class="control-group">
 
 													<label class="control-label">Email</label>
-
+                    
 													<div class="controls">
 
 														<input type="text" name="email" readonly class="m-wrap">
@@ -1123,6 +1138,10 @@
 					   });
 					   $(this).find('a.ghost-answer').on('click', function(){
 						   fSendRequest('/answer', {}, getAnswer);
+					   });
+					   $(this).find('a.ghost-follow').on('click', function(){
+						   var sUid = $(this).attr('data-uid');
+						   fSendRequest('/follower', {uid: sUid}, logoutStatus);
 					   });
 				   });
 				   $('#ghostLoginBtn').on('click', function(){

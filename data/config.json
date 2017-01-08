@@ -1,24 +1,67 @@
 {
     "userList": [{
-            "email": "jasonghost01@cntv.cn",
-            "password": "*qwer1234"
-        },
-        {
-            "email": "mycukaloddo-3272@yopmail.com",
-            "password": "*qwer1234"
-        },
-        {
-            "email": "heaven54321@163.com",
-            "password": "*qwer1234"
-        },
-        {
-            "email": "errazacinn-3695@yopmail.com",
-            "password": "*qwer1234"
-        },
-        {
-            "email": "serrolerrez-7807@yopmail.com",
-            "password": "*qwer1234"
-        }
+        "email": "jasonghost01@cntv.cn",
+        "password": "*qwer1234",
+        "name": "李伟玲",
+        "uid": "li-wei-ling-96",
+        "url": "https://www.zhihu.com/people/li-wei-ling-96"
+    }, {
+        "email": "mycukaloddo-3272@yopmail.com",
+        "password": "*qwer1234",
+        "name": "明锐er",
+        "uid": "ming-rui-er",
+        "url": "https://www.zhihu.com/people/ming-rui-er"
+    }, {
+        "email": "heaven54321@163.com",
+        "password": "*qwer1234",
+        "name": "于晓慧",
+        "uid": "yu-xiao-hui-11-34",
+        "url": "https://www.zhihu.com/people/yu-xiao-hui-11-34"
+    }, {
+        "email": "errazacinn-3695@yopmail.com",
+        "password": "*qwer1234",
+        "name": "晓生sky",
+        "uid": "xiao-sheng-sky",
+        "url": "https://www.zhihu.com/people/xiao-sheng-sky"
+    }, {
+        "email": "serrolerrez-7807@yopmail.com",
+        "password": "*qwer1234",
+        "name": "宋小源",
+        "uid": "song-xiao-yuan-17-14",
+        "url": "https://www.zhihu.com/people/song-xiao-yuan-17-14"
+    }, {
+        "email": "ufittisuss-2705@yopmail.com",
+        "password": "*qwer1234",
+        "name": "金玟岐",
+        "uid": "jin-min-qi-1",
+        "url": "https://www.zhihu.com/people/jin-min-qi-1"
+    }, {
+        "email": "ilagyllu-6668@yopmail.com",
+        "password": "*qwer1234",
+        "name": "HarryFight",
+        "uid": "harryfight-2"
+    }, {
+        "email": "socebullep-8906@yopmail.com",
+        "password": "*qwer1234",
+        "name": "恐高的鸟",
+        "uid": "kong-gao-de-niao-69",
+        "url": "https://www.zhihu.com/people/kong-gao-de-niao-69"
+    }, {
+        "email": "vefilossap-7176@yopmail.com",
+        "password": "*qwer1234",
+        "name": "JOY RICH",
+        "uid": "joyrich-44",
+        "url": "https://www.zhihu.com/people/joyrich-44"
+    }, {
+        "email": "sennyllege-0560@yopmail.com",
+        "password": "*qwer1234",
+        "name": "张亚涛",
+        "uid": "zhang-ya-tao-92",
+        "url": "https://www.zhihu.com/people/zhang-ya-tao-92"
+    }, {
+        "email": "bujuwarull-4981@yopmail.com",
+        "password": "*qwer1234"
+    }
     ],
     "zhihuAPI": {
         "login": {
@@ -32,6 +75,9 @@
         },
         "vote": {
             "url": "https://www.zhihu.com/api/v4/answers/{aid}/voters"
+        },
+        "follower": {
+            "url": "https://www.zhihu.com/api/v4/members/{user-name}/followers"
         }
     },
     "browser": {
