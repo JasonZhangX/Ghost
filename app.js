@@ -225,6 +225,27 @@ oApp.post('/vote', function (req, oPostRes) {
 });
 
 //Followers
+oApp.post('/follower', function (req, oPostRes) {
+    //Anti-spam will disable user when call this api too fast or using same IP address.
+    // var sUid = req.body.uid;
+    // oSuperagent.post(oConfig.zhihuAPI.follower.url.replace('{user-name}', sUid)).set({
+    //     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.87 Safari/537.36',
+    //     'Content-Type': 'application/json',
+    //     'Referer': 'https://www.zhihu.com/',
+    //     'Cookie': oCookie
+    // }).end(function (oErr, oRes) {
+    //     if (!oErr) {
+    //         //Get cookie
+    //         //z_c0
+    //         var oCount = oRes.body;
+    //         oPostRes.send(oCount);
+    //         oPostRes.end();
+    //     } else {
+    //         console.dir(oErr);
+    //         oPostRes.end();
+    //     }
+    // });
+});
 
 var oServer = oApp.listen('3000', function () {
     var host = oServer.address().address;
